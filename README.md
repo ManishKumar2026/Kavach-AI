@@ -1,50 +1,62 @@
-Kavach AI – Zero-Trust Runtime Security Platform for Autonomous AI Agents
+# Kavach AI – Zero-Trust Runtime Security Platform for Autonomous AI Agents
+
 A production-grade security platform that sits between AI agents and their tools (MCP servers/APIs) to intercept every action, understand intent, detect prompt injection, learn agent behavior, calculate dynamic trust scores, enforce security policies, require human approval for critical actions, and block unsafe operations before execution.
 
-🚀 Features
-MCP Runtime Interceptor: Intercept and analyze all tool calls before execution
-Intent Analysis Engine: AI-powered intent understanding and classification
-Prompt Injection Detection: Multi-layer detection of prompt injection attacks
-Risk Scoring Engine: Multi-factor risk calculation with dynamic thresholds
-Behavior Learning Engine: Profiling and anomaly detection for agent behavior
-Trust Engine: Dynamic trust scoring with temporal decay
-Policy Engine: Rule-based policy evaluation and enforcement
-Memory Inspector: Analyze and inspect agent memory/context
-Attack Simulator: Test security with comprehensive attack simulation
-Human Approval Workflow: Queue high-risk actions for human review
-Real-time Monitoring: Live dashboard with WebSocket updates
-Audit Logs: Comprehensive audit trail for compliance
-🛠️ Tech Stack
-Frontend
-Next.js 15: React framework with App Router
-React 19: Latest React features
-TypeScript: Type-safe development
-Tailwind CSS: Utility-first styling
-shadcn/ui: Beautiful, accessible components
-Framer Motion: Smooth animations
-React Flow: Visual graph for runtime monitoring
-Zustand: Lightweight state management
-TanStack Query: Server state management
-Backend
-FastAPI: Modern, fast Python web framework
-PostgreSQL: ACID-compliant database with pgvector
-Redis: Caching and pub/sub
-SQLAlchemy: ORM with async support
-WebSockets: Real-time communication
-JWT Authentication: Stateless authentication
-AI/ML
-Multi-provider AI: OpenAI, Claude, Gemini, OpenRouter
-Local AI: sentence-transformers, ONNX Runtime
-Embeddings: Vector similarity for semantic analysis
-Behavioral Profiling: Statistical analysis and ML models
-📋 Prerequisites
-Python 3.11+
-Node.js 20+
-PostgreSQL 15+
-Redis 7+
-Docker & Docker Compose (optional)
-🔧 Installation
-Backend Setup
+## 🚀 Features
+
+- **MCP Runtime Interceptor**: Intercept and analyze all tool calls before execution
+- **Intent Analysis Engine**: AI-powered intent understanding and classification
+- **Prompt Injection Detection**: Multi-layer detection of prompt injection attacks
+- **Risk Scoring Engine**: Multi-factor risk calculation with dynamic thresholds
+- **Behavior Learning Engine**: Profiling and anomaly detection for agent behavior
+- **Trust Engine**: Dynamic trust scoring with temporal decay
+- **Policy Engine**: Rule-based policy evaluation and enforcement
+- **Memory Inspector**: Analyze and inspect agent memory/context
+- **Attack Simulator**: Test security with comprehensive attack simulation
+- **Human Approval Workflow**: Queue high-risk actions for human review
+- **Real-time Monitoring**: Live dashboard with WebSocket updates
+- **Audit Logs**: Comprehensive audit trail for compliance
+
+## 🛠️ Tech Stack
+
+### Frontend
+- **Next.js 15**: React framework with App Router
+- **React 19**: Latest React features
+- **TypeScript**: Type-safe development
+- **Tailwind CSS**: Utility-first styling
+- **shadcn/ui**: Beautiful, accessible components
+- **Framer Motion**: Smooth animations
+- **React Flow**: Visual graph for runtime monitoring
+- **Zustand**: Lightweight state management
+- **TanStack Query**: Server state management
+
+### Backend
+- **FastAPI**: Modern, fast Python web framework
+- **PostgreSQL**: ACID-compliant database with pgvector
+- **Redis**: Caching and pub/sub
+- **SQLAlchemy**: ORM with async support
+- **WebSockets**: Real-time communication
+- **JWT Authentication**: Stateless authentication
+
+### AI/ML
+- **Multi-provider AI**: OpenAI, Claude, Gemini, OpenRouter
+- **Local AI**: sentence-transformers, ONNX Runtime
+- **Embeddings**: Vector similarity for semantic analysis
+- **Behavioral Profiling**: Statistical analysis and ML models
+
+## 📋 Prerequisites
+
+- Python 3.11+
+- Node.js 20+
+- PostgreSQL 15+
+- Redis 7+
+- Docker & Docker Compose (optional)
+
+## 🔧 Installation
+
+### Backend Setup
+
+```bash
 cd backend
 
 # Create virtual environment
@@ -63,7 +75,11 @@ alembic upgrade head
 
 # Start the server
 uvicorn app.main:app --reload --host 0.0.0.0 --port 8000
-Frontend Setup
+```
+
+### Frontend Setup
+
+```bash
 cd frontend
 
 # Install dependencies
@@ -75,7 +91,11 @@ cp .env.example .env.local
 
 # Start the development server
 npm run dev
-Docker Setup
+```
+
+### Docker Setup
+
+```bash
 # Start all services
 docker-compose up -d
 
@@ -84,7 +104,11 @@ docker-compose logs -f
 
 # Stop services
 docker-compose down
-🏗️ Project Structure
+```
+
+## 🏗️ Project Structure
+
+```
 kavach-ai/
 ├── backend/                    # FastAPI backend
 │   ├── app/
@@ -114,20 +138,28 @@ kavach-ai/
 │   └── package.json
 ├── docs/                      # Documentation
 └── docker-compose.yml
-🔐 Security Features
-Zero-Trust Architecture: Every action is treated as potentially malicious
-Multi-Layer Analysis: Intent, risk, behavior, and policy evaluation
-Prompt Injection Detection: Pattern-based and semantic detection
-Dynamic Trust Scoring: Trust scores that evolve with agent behavior
-Human-in-the-Loop: Critical actions require human approval
-Comprehensive Audit Trail: All actions logged for compliance
-📊 API Documentation
-Once the backend is running, visit:
+```
 
-Swagger UI: http://localhost:8000/api/docs
-ReDoc: http://localhost:8000/api/redoc
-🧪 Testing
-Backend Tests
+## 🔐 Security Features
+
+- **Zero-Trust Architecture**: Every action is treated as potentially malicious
+- **Multi-Layer Analysis**: Intent, risk, behavior, and policy evaluation
+- **Prompt Injection Detection**: Pattern-based and semantic detection
+- **Dynamic Trust Scoring**: Trust scores that evolve with agent behavior
+- **Human-in-the-Loop**: Critical actions require human approval
+- **Comprehensive Audit Trail**: All actions logged for compliance
+
+## 📊 API Documentation
+
+Once the backend is running, visit:
+- Swagger UI: `http://localhost:8000/api/docs`
+- ReDoc: `http://localhost:8000/api/redoc`
+
+## 🧪 Testing
+
+### Backend Tests
+
+```bash
 cd backend
 
 # Run all tests
@@ -138,7 +170,11 @@ pytest --cov=app --cov-report=html
 
 # Run specific test file
 pytest tests/test_api/test_auth.py
-Frontend Tests
+```
+
+### Frontend Tests
+
+```bash
 cd frontend
 
 # Run tests
@@ -146,51 +182,69 @@ npm test
 
 # Run with coverage
 npm test -- --coverage
-🚀 Deployment
-Environment Variables
-Backend (.env):
+```
 
+## 🚀 Deployment
+
+### Environment Variables
+
+Backend (`.env`):
+```env
 DATABASE_URL=postgresql+asyncpg://user:password@localhost:5432/kavach
 REDIS_URL=redis://localhost:6379/0
 SECRET_KEY=your-secret-key
 OPENAI_API_KEY=sk-...
 ANTHROPIC_API_KEY=sk-ant-...
 GOOGLE_API_KEY=...
-Frontend (.env.local):
+```
 
+Frontend (`.env.local`):
+```env
 NEXT_PUBLIC_API_URL=http://localhost:8000
-Production Deployment
-Backend:
+```
 
-Use Gunicorn with Uvicorn workers
-Configure PostgreSQL with connection pooling
-Set up Redis with persistence
-Enable HTTPS with proper certificates
-Frontend:
+### Production Deployment
 
-Build with npm run build
-Serve with Node.js or use Next.js standalone output
-Configure CDN for static assets
-Docker:
+1. **Backend**:
+   - Use Gunicorn with Uvicorn workers
+   - Configure PostgreSQL with connection pooling
+   - Set up Redis with persistence
+   - Enable HTTPS with proper certificates
 
-Use the provided Dockerfile
-Deploy with Docker Compose or Kubernetes
-Configure health checks and auto-restart policies
-📈 Monitoring
-Prometheus: Metrics collection
-Sentry: Error tracking and performance monitoring
-Custom Dashboard: Real-time monitoring via WebSocket
-🤝 Contributing
-Fork the repository
-Create a feature branch
-Make your changes
-Add tests
-Submit a pull request
-📝 License
+2. **Frontend**:
+   - Build with `npm run build`
+   - Serve with Node.js or use Next.js standalone output
+   - Configure CDN for static assets
+
+3. **Docker**:
+   - Use the provided Dockerfile
+   - Deploy with Docker Compose or Kubernetes
+   - Configure health checks and auto-restart policies
+
+## 📈 Monitoring
+
+- **Prometheus**: Metrics collection
+- **Sentry**: Error tracking and performance monitoring
+- **Custom Dashboard**: Real-time monitoring via WebSocket
+
+## 🤝 Contributing
+
+1. Fork the repository
+2. Create a feature branch
+3. Make your changes
+4. Add tests
+5. Submit a pull request
+
+## 📝 License
+
 MIT License - see LICENSE file for details
 
-🙏 Acknowledgments
-Inspired by the need for AI agent security in production environments
-Built with modern best practices and enterprise-grade architecture
-Design inspiration from Linear, Cursor, Vercel, and OpenAI
-Built with ❤️ for secure AI agent operations
+## 🙏 Acknowledgments
+
+- Inspired by the need for AI agent security in production environments
+- Built with modern best practices and enterprise-grade architecture
+- Design inspiration from Linear, Cursor, Vercel, and OpenAI
+
+---
+
+**Built with ❤️ for secure AI agent operations**
